@@ -1,0 +1,23 @@
+$primary: #ff70A6;
+$secondary: #FF9770;
+$orange: #FFD670;
+$yellow: #E9FF70;
+$gray: #f2f2f2;
+$black: #403D39;
+
+.bg{
+    &-gradient{
+        &-large{
+            background: linear-gradient(99deg,$primary, $secondary 40%,$orange 73%,$yellow);
+        }
+        &-small{
+            background: linear-gradient(97deg,$secondary,$orange);
+        }
+    }
+}
+
+.height{
+    &-100-vh{
+        height: 100vh;
+    }
+}

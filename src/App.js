@@ -1,21 +1,29 @@
-import React from 'react';
-import './App.css';
-import Dashboard from './Components/Dashboard/Dashboard';
-import Form from './Components/Form/Form';
-import Post from './Components/Post/Post';
+import React, { Component } from 'react';
+import './App.scss';
+import routes from './routes';
 import Nav from './Components/Nav/Nav';
-import Auth from './Components/Auth/Auth';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import { HashRouter } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <Nav />
-      <Auth />
-      <Dashboard />
-      <Form />
-      <Post />
-    </div>
-  );
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+    }
+  }
+  render(){
+    return (
+      <Provider store={store}>
+        <HashRouter>
+          <div className="App">
+            <Nav />
+            {routes}
+          </div>
+        </HashRouter>
+      </Provider>
+    );
+  }
 }
 
 export default App;
